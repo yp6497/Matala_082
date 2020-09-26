@@ -17,16 +17,18 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     Spinner spin;
     ListView lv;
-    int wArray,count=0,x;
+    int count=0,x;
 
-    //tring [] medinot={"Afr","Amca","As","Ee"};
-    //String [] medinot2={"f","A","s","e"};
     String [][] medinot={{"Congo","madagascar","morocco","nigeria","Tanazania","Uganda","sudan"}, {"Argentina", "canada","Brazil","colombia","Mexico","United States","Venezuela"},
             {"Chaina", "India","Israel","Japan","Russia","Turkey","Yemen"}, {"Bulgaria", "France","Germany","Hungary","Italy","Norway","Sweden"}};
-
-    String [][] europe={{"fg","f","g","gf"},{"yu","yu","yu","yu"},{"","","",""},{"","","",""},{"","","",""},{"","","",""},{"","","",""}};
-    String [] boo={"Africa","America","Asia","Europe"};
+    String [][] m=new String[7][4];
+    String [][] africa={{"fg","f","g","gf"},{"yu","yu","yu","yu"},{"","","",""},{"","","",""},{"","","",""},{"","","",""},{"","","",""}};
+    String [][] america={{"fg","f","g","gf"},{"yu","yu","yu","yu"},{"","","k",""},{"","","",""},{"","","",""},{"","","",""},{"","","",""}};
+    String [][] asia={{"fg","f","g","gf"},{"yu","yu","yu","yu"},{"","","",""},{"","","",""},{"","","",""},{"","","",""},{"","","",""}};
+    String [][] europe={{"fg","f","g","gf"},{"yu","yu","yu","yu"},{"","","u",""},{"","","",""},{"","","",""},{"","","",""},{"","","",""}};
+    String [] boo={"Choose country","Africa","America","Asia","Europe"};
     TextView tv,tv2,tv3,tv4;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +42,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         tv4=findViewById(R.id.tv4);
 
         spin.setOnItemSelectedListener(this);
-
         ArrayAdapter<String> adp = new ArrayAdapter<String>(this,
                 R.layout.support_simple_spinner_dropdown_item,boo);
         spin.setAdapter(adp);
@@ -56,13 +57,18 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         tv2.setText("");
         tv3.setText("");
         tv4.setText("");
+        if(position==0) {
+            Toast.makeText(this,"Please choose a country", Toast.LENGTH_SHORT).show();
+        }
 
-        //if(count==0)   {Toast.makeText(this,"Please choose a country", Toast.LENGTH_SHORT).show();}
+        //if(position==0 && count==0) Toast.makeText(this,"Please choose a country", Toast.LENGTH_SHORT).show();
 
+        else {
             ArrayAdapter<String> adpl = new ArrayAdapter<String>(this,
-                    R.layout.support_simple_spinner_dropdown_item, medinot[position]);
+                    R.layout.support_simple_spinner_dropdown_item, medinot[position-1]);
             lv.setAdapter(adpl);
-            x=position;
+            x = position;
+        }
     }
 
     @Override
@@ -72,31 +78,21 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        if(x==0) {
-            tv.setText("h " + europe[position][0]);
-            tv2.setText("c " + europe[position][1]);
-            tv3.setText("d " + europe[position][2]);
-            tv4.setText("s " + europe[position][3]);
-        }
         if(x==1) {
-            tv.setText("h " + europe[position][0]);
-            tv2.setText("c " + europe[position][1]);
-            tv3.setText("d " + europe[position][2]);
-            tv4.setText("s " + europe[position][3]);
+            m=africa;
         }
-
-        if(x==2) {
-            tv.setText("h " + europe[position][0]);
-            tv2.setText("c " + europe[position][1]);
-            tv3.setText("d " + europe[position][2]);
-            tv4.setText("s " + europe[position][3]);
+        else if(x==2) {
+            m=america;
         }
-
-        if(x==3) {
-            tv.setText("h " + europe[position][0]);
-            tv2.setText("c " + europe[position][1]);
-            tv3.setText("d " + europe[position][2]);
-            tv4.setText("s " + europe[position][3]);
+        else if(x==3) {
+            m=asia;
         }
+        else if(x==4) {
+            m=europe;
+        }
+        tv.setText("h " + m[position][0]);
+        tv2.setText("c " + m[position][1]);
+        tv3.setText("d " + m[position][2]);
+        tv4.setText("s " + m[position][3]);
     }
 }
