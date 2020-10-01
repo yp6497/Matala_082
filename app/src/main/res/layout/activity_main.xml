@@ -23,7 +23,7 @@
             <ListView
                 android:id="@+id/lv"
                 android:layout_width="195dp"
-                android:layout_height="357dp">
+                android:layout_height="458dp">
 
             </ListView>
 
