@@ -27,7 +27,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             {"Mexican National Anthem","Mexico city","Spanish","128,649,565"},{"The Star-Spangled Banner","Washington","English","328,239,523"},{"Glory to the Brave People","Caracas","spanish","28,887,118"}};
     String [][] asiaMI={{"March of the Volunteers","Beijing","Chinese","1,400,050,000"},{"Thou Art the Ruler of the Minds of All People","New delhi","English","1,352,642,280"},{"The Hope","Jerusalem","Hebrew","9,258,200"}, {"His Imperial Majesty's Reign","Tokyo","Japanese","125,960,000"},
             {"State Anthem of the Russian Federation","Moscow","Russian","146,748,590"}, {"The Independence March","Ankara","Turkish","83,154,997"},{"United Republic","Sanaa","Arabic","28,498,683"}};
-    String [][] europeMI={{"","","",""},{"","","",""},{"","","",""},{"","","",""},{"","","",""},{"","","",""},{"","","",""}};
+    String [][] europeMI={{"Dear Motherland","Sofia","Bulgarian","6,951,482"},{"La Marseillaise","Paris","French"," 67,081,000"},{"Song of Germany","Berlin","German","83,166,711"},{"Hymn","Budapest","Hungarian","9,772,756"},
+            {"The Song of the Italians","Rome","Italian","60,317,116"},{"Yes, we love this country","Oslo","Norwegian","5,432,580"},{"Thou ancient, thou free","Stockholm","Swedish","10,343,403"}};
     String [] ibashot={"Choose country","Africa","America","Asia","Europe"};
     String [][] arrayS=new String[7][4];
 
