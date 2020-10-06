@@ -19,9 +19,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     TextView tv,tv2,tv3,tv4;
     int x;
 
-    String [][] medinot={{"Congo","madagascar","morocco","nigeria","Tanzania","Uganda","sudan"}, {"Argentina", "canada","Brazil","colombia","Mexico","United States","Venezuela"},
+    String [][] Medinot={{"Congo","madagascar","morocco","nigeria","Tanzania","Uganda","sudan"}, {"Argentina", "canada","Brazil","colombia","Mexico","United States","Venezuela"},
             {"Chaina", "India","Israel","Japan","Russia","Turkey","Yemen"}, {"Bulgaria", "France","Germany","Hungary","Italy","Norway","Sweden"}};
-    String [][] africaMI={{"Debout Congolais","Kinshasa","French","101,780,263"},{"Ry Tanindrazanay malala ô!","Antananarivo","French","26,262,313"},{"Cherifian Anthem","Rabat","Arabic","36,472,000"},{"Arise, O Compatriots","Abuja","English","206,630,269["},
+    String [][] africaMI={{"Debout Congolais","Kinshasa","French","101,780,263"},{"Ry Tanindrazanay malala ô!","Antananarivo","French","26,262,313"},{"Cherifian Anthem","Rabat","Arabic","36,472,000"},{"Arise, O Compatriots","Abuja","English","206,630,269"},
             {"God Bless Africa","Dodoma","English","56,313,438"},{"Oh Uganda, Land of Beauty","Kampala","English","42,729,036"},{"We are the Soldiers of God, the Soldiers of the Nation","Khartoum","Arabic","41,592,539"}};
     String [][] americaMI={{"Argentine National Anthem","Buenos Aries","Spanish","44,938,712"},{"O Canada","Ottawa","English","38,005,238"},{"Brazilian National Anthem","Brazilia","Portuguese","210,147,125"}, {"National Anthem of the Republic of Colombia","Bogota","Spanish","50,372,424"},
             {"Mexican National Anthem","Mexico city","Spanish","128,649,565"},{"The Star-Spangled Banner","Washington","English","328,239,523"},{"Glory to the Brave People","Caracas","spanish","28,887,118"}};
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             {"State Anthem of the Russian Federation","Moscow","Russian","146,748,590"}, {"The Independence March","Ankara","Turkish","83,154,997"},{"United Republic","Sanaa","Arabic","28,498,683"}};
     String [][] europeMI={{"Dear Motherland","Sofia","Bulgarian","6,951,482"},{"La Marseillaise","Paris","French"," 67,081,000"},{"Song of Germany","Berlin","German","83,166,711"},{"Hymn","Budapest","Hungarian","9,772,756"},
             {"The Song of the Italians","Rome","Italian","60,317,116"},{"Yes, we love this country","Oslo","Norwegian","5,432,580"},{"Thou ancient, thou free","Stockholm","Swedish","10,343,403"}};
-    String [] ibashot={"Choose country","Africa","America","Asia","Europe"};
+    String [] Ibashot={"Choose country","Africa","America","Asia","Europe"};
     String [][] arrayS=new String[7][4];
 
     @Override
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         spin.setOnItemSelectedListener(this);
         ArrayAdapter<String> adp = new ArrayAdapter<String>(this,
-                R.layout.support_simple_spinner_dropdown_item,ibashot);
+                R.layout.support_simple_spinner_dropdown_item,Ibashot);
         spin.setAdapter(adp);
 
         lv.setOnItemClickListener(this);
@@ -61,12 +61,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         tv3.setText("");
         tv4.setText("");
         if(position==0) {
-            Toast.makeText(this,"Please choose a country", Toast.LENGTH_SHORT).show();
+            lv.setAdapter(null);
         }
 
         else {
             ArrayAdapter<String> adpl = new ArrayAdapter<String>(this,
-                    R.layout.support_simple_spinner_dropdown_item, medinot[position-1]);
+                    R.layout.support_simple_spinner_dropdown_item, Medinot[position-1]);
             lv.setAdapter(adpl);
             x = position-1;
         }
@@ -91,9 +91,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         else if(x==3) {
             arrayS=europeMI;
         }
-        tv.setText("h " + arrayS[position][0]);
-        tv2.setText("c " + arrayS[position][1]);
-        tv3.setText("d " + arrayS[position][2]);
-        tv4.setText("s " + arrayS[position][3]);
+        tv.setText("Anthem: " + arrayS[position][0]);
+        tv2.setText("Capital: " + arrayS[position][1]);
+        tv3.setText("Language: " + arrayS[position][2]);
+        tv4.setText("Population: " + arrayS[position][3]);
     }
 }
