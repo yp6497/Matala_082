@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             {"State Anthem of the Russian Federation","Moscow","Russian","146,748,590"}, {"The Independence March","Ankara","Turkish","83,154,997"},{"United Republic","Sanaa","Arabic","28,498,683"}};
     String [][] europeMI={{"Dear Motherland","Sofia","Bulgarian","6,951,482"},{"La Marseillaise","Paris","French"," 67,081,000"},{"Song of Germany","Berlin","German","83,166,711"},{"Hymn","Budapest","Hungarian","9,772,756"},
             {"The Song of the Italians","Rome","Italian","60,317,116"},{"Yes, we love this country","Oslo","Norwegian","5,432,580"},{"Thou ancient, thou free","Stockholm","Swedish","10,343,403"}};
-    String [] Ibashot={"Choose country","Africa","America","Asia","Europe"};
+    String [] Ibashot={"Choose a continent","Africa","America","Asia","Europe"};
     String [][] arrayS=new String[7][4];
 
     @Override
