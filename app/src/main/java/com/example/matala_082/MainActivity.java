@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     Spinner spin;
     ListView lv;
     TextView tv,tv2,tv3,tv4;
-    int x;
+    int pos;
 
     String [][] Medinot={{"Congo","madagascar","morocco","nigeria","Tanzania","Uganda","sudan"}, {"Argentina", "canada","Brazil","colombia","Mexico","United States","Venezuela"},
             {"Chaina", "India","Israel","Japan","Russia","Turkey","Yemen"}, {"Bulgaria", "France","Germany","Hungary","Italy","Norway","Sweden"}};
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             ArrayAdapter<String> adpl = new ArrayAdapter<String>(this,
                     R.layout.support_simple_spinner_dropdown_item, Medinot[position-1]);
             lv.setAdapter(adpl);
-            x = position-1;
+            pos = position-1;
         }
     }
 
@@ -79,16 +79,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        if(x==0) {
+        if(pos==0) {
             arrayS=africaMI;
         }
-        else if(x==1) {
+        else if(pos==1) {
             arrayS=americaMI;
         }
-        else if(x==2) {
+        else if(pos==2) {
             arrayS=asiaMI;
         }
-        else if(x==3) {
+        else if(pos==3) {
             arrayS=europeMI;
         }
         tv.setText("Anthem: " + arrayS[position][0]);
